@@ -88,9 +88,9 @@ define('tests/unit/compat_filter',
             helpers
             .injector(androidCapabilities('mobile'))
             .run(['compat_filter'], function(compatFilter) {
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES.length, 2);
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES[0][0], 'all');
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES[1][0], 'android-mobile');
+                assert.equal(compatFilter.getDeviceFilterChoices().length, 2);
+                assert.equal(compatFilter.getDeviceFilterChoices()[0][0], 'all');
+                assert.equal(compatFilter.getDeviceFilterChoices()[1][0], 'android-mobile');
             }));
 
 
@@ -112,9 +112,9 @@ define('tests/unit/compat_filter',
             helpers
             .injector(androidCapabilities('tablet'))
             .run(['compat_filter'], function(compatFilter) {
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES.length, 2);
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES[0][0], 'all');
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES[1][0], 'android-tablet');
+                assert.equal(compatFilter.getDeviceFilterChoices().length, 2);
+                assert.equal(compatFilter.getDeviceFilterChoices()[0][0], 'all');
+                assert.equal(compatFilter.getDeviceFilterChoices()[1][0], 'android-tablet');
             }));
 
         it('set device to firefoxos',
@@ -135,9 +135,9 @@ define('tests/unit/compat_filter',
             helpers
             .injector(firefoxOSCapabilities, noStorage)
             .run(['compat_filter'], function(compatFilter) {
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES.length, 2);
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES[0][0], 'all');
-                assert.equal(compatFilter.DEVICE_FILTER_CHOICES[1][0], 'firefoxos');
+                assert.equal(compatFilter.getDeviceFilterChoices().length, 2);
+                assert.equal(compatFilter.getDeviceFilterChoices()[0][0], 'all');
+                assert.equal(compatFilter.getDeviceFilterChoices()[1][0], 'firefoxos');
             }));
 
         it('set feature profiles',
